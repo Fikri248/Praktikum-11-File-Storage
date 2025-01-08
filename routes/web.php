@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth; // Tambahkan ini jika Auth tidak dikenali
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\Auth\LoginController; // Tambahkan ini untuk LoginController
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -85,7 +85,6 @@ Route::get('/download-public-file', function () {
 });
 
 Route::get('/file-url', function () {
-    // Just prepend "/storage" to the given path and return a relative URL
     $url = Storage::url('local-example.txt');
     return $url;
 });
